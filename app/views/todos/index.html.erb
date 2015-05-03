@@ -1,0 +1,24 @@
+<h1>Lista de tareas TODO</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+ 
+  <% @todos.each do |todo| %>
+    <tr>
+      <td><%= todo.title %></td>
+      <td><%= link_to 'Show', todo_path(todo) %></td>
+      <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+      <td><%= link_to 'Destroy', todo_path(todo),
+              method: :delete,
+              data: { confirm: 'Seguro?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New todo', new_todo_path %>
+
+
+
+
